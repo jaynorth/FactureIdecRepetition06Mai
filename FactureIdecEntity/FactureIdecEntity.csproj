@@ -49,11 +49,11 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Model\FacturesEntityModel.edmx">
+    <EntityDeploy Include="FacturesEntityModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>FacturesEntityModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\FacturesEntityModel.edmx.diagram">
+    <None Include="FacturesEntityModel.edmx.diagram">
       <DependentUpon>FacturesEntityModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -75,34 +75,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Article.cs">
+    <Compile Include="Article.cs">
       <DependentUpon>FacturesEntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Client.cs">
+    <Compile Include="Client.cs">
       <DependentUpon>FacturesEntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Facture.cs">
+    <Compile Include="Facture.cs">
       <DependentUpon>FacturesEntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\FacturesEntityModel.Context.cs">
+    <Compile Include="FacturesEntityModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FacturesEntityModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\FacturesEntityModel.cs">
+    <Compile Include="FacturesEntityModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FacturesEntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\FacturesEntityModel.Designer.cs">
+    <Compile Include="FacturesEntityModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FacturesEntityModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\LigneFacture.cs">
+    <Compile Include="LigneFacture.cs">
       <DependentUpon>FacturesEntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Utilisateur.cs">
+    <Compile Include="Model\Article.cs" />
+    <Compile Include="Utilisateur.cs">
       <DependentUpon>FacturesEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Test.cs" />
@@ -115,12 +116,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>FactureIdec.mdf</DependentUpon>
     </Content>
-    <Content Include="Model\FacturesEntityModel.Context.tt">
+    <Content Include="FacturesEntityModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FacturesEntityModel.Context.cs</LastGenOutput>
       <DependentUpon>FacturesEntityModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Model\FacturesEntityModel.tt">
+    <Content Include="FacturesEntityModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FacturesEntityModel.edmx</DependentUpon>
       <LastGenOutput>FacturesEntityModel.cs</LastGenOutput>
