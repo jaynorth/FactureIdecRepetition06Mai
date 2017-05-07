@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:FacturesWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <DataGrid Grid.Row="1" Grid.ColumnSpan="2" 
@@ -23,7 +23,7 @@
                 <DataGridTextColumn Header="Prix" Binding="{Binding Prix}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid Grid.Column="0" Grid.Row="0">
+        <Grid Grid.Column="0" Grid.Row="0" ShowGridLines="False">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -44,7 +44,19 @@
             <TextBox Text="{Binding ArticleCourant.Prix}" Grid.Row="3" Grid.Column="1" Width="100"/>
         </Grid>
 
-        <Button Content="Sauver" Name="btnSave" Grid.Row="0" Grid.Column="1" Height="100" Click="btnSave_Click"/>
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Nouveau" Name="btnNew" Grid.Row="0" Grid.Column="1" Width="200" Height="auto" HorizontalAlignment="Left" Command="{Binding New}" Margin="10"/>
+            <Button Content="Supprimer" Name="btnDelete" Grid.Row="1" Grid.Column="1" Width="200" Height="auto" Command="{Binding Delete}" HorizontalAlignment="Left" Margin="10"/>
+            <Button Content="Sauver" Name="btnSave" Grid.Row="2" Grid.Column="1" Width="200" Height="auto" Command="{Binding Save}" HorizontalAlignment="Left" Margin="10"/>
+        </Grid>
 
     </Grid>
 </Window>
