@@ -13,19 +13,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace FacturesWPF
 {
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         public MainWindow()
         {
             InitializeComponent();
             DataContext = new ArticleViewModel();
         }
+
+        public ArticleViewModel DataContext { get; private set; }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
