@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="FacturesWPF.View.ClientWindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FacturesWPF.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="700">
+    <Grid>
+
+        <Grid ShowGridLines="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid Grid.Row="1" Grid.ColumnSpan="2" 
+                  ItemsSource="{Binding ListClients}" SelectedItem="{Binding ClientCourant}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
+                    <DataGridTextColumn Header="Prenom" Binding="{Binding Prenom}"/>
+                    <DataGridTextColumn Header="Date Naissance" Binding="{Binding DateNaissance}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Column="0" Grid.Row="0" ShowGridLines="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Id" Grid.Row="0" Grid.Column="0"/>
+                <TextBox Text="{Binding ClientCourant.Id}" Grid.Row="0" Grid.Column="1" Width="100"/>
+                <Label Content="Nom" Grid.Row="1" Grid.Column="0"/>
+                <TextBox Text="{Binding ClientCourant.Nom}" Grid.Row="1" Grid.Column="1" Width="100"/>
+                <Label Content="Prenom" Grid.Row="2" Grid.Column="0"/>
+                <TextBox Text="{Binding ClientCourant.Prenom}" Grid.Row="2" Grid.Column="1" Width="100" Margin="1,0"  />
+                <Label Content="Date Naissance" Grid.Row="3" Grid.Column="0"/>
+                <TextBox Text="{Binding ClientCourant.DateNaissance}" Grid.Row="3" Grid.Column="1" Width="100"/>
+            </Grid>
+
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Nouveau" Name="btnNew" Grid.Row="0" Grid.Column="1" Width="200" Height="auto" HorizontalAlignment="Left" Command="{Binding New}" Margin="10"/>
+                <Button Content="Supprimer" Name="btnDelete" Grid.Row="1" Grid.Column="1" Width="200" Height="auto" Command="{Binding Delete}" HorizontalAlignment="Left" Margin="10"/>
+                <Button Content="Sauver" Name="btnSave" Grid.Row="2" Grid.Column="1" Width="200" Height="auto" Command="{Binding Save}" HorizontalAlignment="Left" Margin="10"/>
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

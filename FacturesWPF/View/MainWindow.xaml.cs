@@ -28,16 +28,13 @@ namespace FacturesWPF
             DataContext = new ArticleViewModel();
         }
 
-        public ArticleViewModel DataContext { get; private set; }
+        //public ArticleViewModel DataContext { get; private set; }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("salut");
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+        
     }
 }

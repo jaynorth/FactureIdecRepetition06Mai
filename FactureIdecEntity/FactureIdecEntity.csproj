@@ -103,6 +103,7 @@
       <DependentUpon>FacturesEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Article.cs" />
+    <Compile Include="Model\Client.cs" />
     <Compile Include="Utilisateur.cs">
       <DependentUpon>FacturesEntityModel.tt</DependentUpon>
     </Compile>
