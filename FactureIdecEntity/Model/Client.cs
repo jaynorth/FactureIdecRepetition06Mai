@@ -9,17 +9,23 @@ using System.Threading.Tasks;
 namespace FactureIdecEntity
 {
     public partial class Client
-    {
+
+   {
+
+  
 
         public static Client GetNewClient()
         {
             Client c = new Client();
-            c.Id = -1;
+            
             c.Del = false;
-            c.Id = -1;
+            c.New = true;
+          
             return c;
         }
 
         public bool Del { get; set; }
+
+        public bool New { get; set; }
     }
 }

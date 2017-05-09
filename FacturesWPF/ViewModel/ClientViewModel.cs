@@ -50,7 +50,8 @@ namespace FacturesWPF.ViewModel
         {
             foreach (Client c in ListClients)
             {
-                if (c.Id == -1)
+                if (c.New == true)
+                    
                     _entity.Clients.Add(c);
                 if (c.Del)
                     _entity.Clients.Remove(c);
